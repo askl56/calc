@@ -1,3 +1,5 @@
+require "minitest/autorun"
+
 class TestMathExpression < Minitest::Test
   def test_number
     assert_equal 9, MathExpression.calculate("9")

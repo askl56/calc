@@ -1,11 +1,3 @@
-require "minitest/autorun"
-
-class MathExpression
-  def self.calculate(string)
-  	return string.to_i unless string.include?(' ')
-  end 
-end
-
 class String
 	OPS = { "PLUS" => "+", "MINUS" => "-", "MUL" => "*", "DIV" => "/" }
 
