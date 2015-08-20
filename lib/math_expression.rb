@@ -1,15 +1,23 @@
-require "minitest/autorun"
-
 class MathExpression
+
   def self.calculate(string)
-  	return string.to_i unless string.include?(' ')
-  end 
-end
+    # matches = /(\d+)\s*(\w+)\s?(\d+)/.match(string)
+    # num1 = matches[1].to_i
+    # num2 = matches[3].to_i
+    # action = matches[2]
 
-class String
-	OPS = { "PLUS" => "+", "MINUS" => "-", "MUL" => "*", "DIV" => "/" }
+    # if matches.size == 1
+    #   return num1
+    # elsif action == "PLUS"
+    #   return (num1 + num2)
+    # elsif action == "MINUS"
+    #   return (num1 - num2)
+    # else
+    #   return num1
+    # end
 
-	def translate; op = OPS.keys.grep(/#{self}/i)
-		return op.size>0 ? OPS[op[0]] : self
-	end
+  calc_array = string.split(" ")
+  
+
+  end
 end
