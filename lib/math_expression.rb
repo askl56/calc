@@ -12,8 +12,6 @@ class MathExpression
     tail.each_slice(2).inject(head) { |number, operation| number.public_send(*operation)}
   end
 
-  private
-
   def self.number?(value)
     !value[/\A\d+\z/].nil?
   end
