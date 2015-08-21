@@ -1,22 +1,27 @@
 class MathExpression
 
+  def initialize(expression)
+    @expression = expression
+  end
+
   OPERATOR = {
     "PLUS" => "+",
     "MINUS" => "-"
   }.freeze
 
-  def initialize(string)
-    @string = string
+  def self.calculate(expression)
+    new(expression).calculate
   end
 
-  def self.calculate(string)
-    value = string.split(" ")
-    shortened_array = value.map{ |v| parse(v) }.compact
-    head, *tail = shortened_array
+  def calculate
+    head, *tail = expression.split.collect{ |v| parse(v) }.compact
     tail.each_slice(2).inject(head) { |number, operation| number.public_send(*operation)}
   end
 
+
   private
+
+  attr_reader :expression
 
   def number?(value)
     !value[/\A\d+\z/].nil?
