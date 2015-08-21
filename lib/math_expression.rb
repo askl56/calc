@@ -16,8 +16,21 @@ class MathExpression
     #   return num1
     # end
 
-  calc_array = string.split(" ")
+  value = string.split(" ")
   
 
+  
+
+  end
+
+  private
+
+  def is_number?(value)
+    value.to_i == value
+  end
+
+  def parser
+
+      
   end
 end
