@@ -1,4 +1,5 @@
 require "minitest/autorun"
+require "./lib/math_expression"
 
 class TestMathExpression < Minitest::Test
   def test_number
