@@ -16,10 +16,10 @@ class MathExpression
     #   return num1
     # end
 
-  value = string.split(" ")
-  
-
-  
+    value = string.split(" ")
+    shortened_array = value.map{ |v| parser(v) }.compact!
+    head, *tail = shortened_array
+    tail.each_slice(2).inject(head) { |val1, next| val1.send(*next_op)}
 
   end
 
@@ -29,8 +29,13 @@ class MathExpression
     value.to_i == value
   end
 
-  def parser
+  def parser(value)
+    if OPERATOR.keys.include? value
+      return OPERATOR[key]
+    end
 
-      
+    if is_number?(value)
+      value.to_i
+    end
   end
 end
