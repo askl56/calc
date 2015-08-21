@@ -1,30 +1,30 @@
 class MathExpression
 
-  def self.calculate(string)
-    value = string.split(" ")
-    shortened_array = value.map{ |v| parser(v) }.compact
-    head, *tail = shortened_array
-    tail.each_slice(2).inject(head) { |b1, operation| b1.send(*operation)}
-  end
-
   OPERATOR = {
     "PLUS" => "+",
     "MINUS" => "-"
-  }
+  }.freeze
+
+  def self.calculate(string)
+    value = string.split(" ")
+    shortened_array = value.map{ |v| parse(v) }.compact
+    head, *tail = shortened_array
+    tail.each_slice(2).inject(head) { |number, operation| number.public_send(*operation)}
+  end
 
   private
 
-  def self.is_number?(value)
-    Integer(value) rescue false
+  def self.number?(value)
+    !value[/\A\d+\z/].nil?
   end
 
-  def self.parser(value)
-    if OPERATOR.keys.include? value
+  def self.parse(value)
+    if OPERATOR.keys.include?(value)
       return OPERATOR[value]
-    end
-
-    if is_number?(value)
+    elsif number?(value)
       value.to_i
+    else
+      puts "Invalid input"
     end
   end
 end
