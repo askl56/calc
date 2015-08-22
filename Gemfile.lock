@@ -8,8 +8,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  minitest (~> 5)
-  rake (~> 10)
+  minitest
+  rake
 
 BUNDLED WITH
    1.10.6
