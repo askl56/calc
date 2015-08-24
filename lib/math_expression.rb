@@ -6,7 +6,9 @@ class MathExpression
 
   OPERATOR = {
     "PLUS" => "+",
-    "MINUS" => "-"
+    "MINUS" => "-",
+    "DIVIDE" => "/",
+    "TIMES" => "*"
   }.freeze
 
   def self.calculate(expression)
