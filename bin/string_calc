@@ -2,7 +2,7 @@
 
 require './lib/math_expression'
 
-expression = ARGV[0].to_s
+expression = ARGV[0]
 
 result = MathExpression.calculate(expression)
 puts result
