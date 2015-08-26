@@ -1,0 +1,5 @@
+#! /usr/bin/env ruby -w
+
+require './lib/math_expression'
+
+string_calc = MathExpression.calculate(expression)
