@@ -2,5 +2,8 @@
 
 require './lib/math_expression'
 
-string_calc(expression) = MathExpression.calculate(expression)
-string_calc(expression)
+expression = ARGV[0].to_s
+
+result = MathExpression.calculate(expression)
+puts result
+
