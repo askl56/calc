@@ -1,5 +1,6 @@
-#! /usr/bin/env ruby -w
+#!/usr/bin/env ruby
 
 require './lib/math_expression'
 
-string_calc = MathExpression.calculate(expression)
+string_calc(expression) = MathExpression.calculate(expression)
+string_calc(expression)
