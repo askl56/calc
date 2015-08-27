@@ -1,5 +1,7 @@
 class MathExpression
 
+  require_relative "default_expression_formatter"
+
   def initialize(expression)
     @expression = expression
   end
@@ -12,7 +14,8 @@ class MathExpression
   }.freeze
 
   def self.calculate(expression)
-    new(expression).calculate
+    answer = new(expression).calculate
+    # formatted_answer = ExpressionFormatter.default_format expression, answer
   end
 
   def calculate
