@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
 
 require './lib/math_expression'
+require './lib/expression_formatter'
 
 expression = ARGV[0]
 
 result = MathExpression.calculate(expression)
-puts "The answer to the question is #{result}"
+formatted_answer = ExpressionFormatter.new result
+formatted_answer.executable_format(result)
 
