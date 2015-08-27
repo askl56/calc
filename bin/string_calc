@@ -5,5 +5,5 @@ require './lib/math_expression'
 expression = ARGV[0]
 
 result = MathExpression.calculate(expression)
-puts result
+puts "The answer to the question is #{result}"
 
