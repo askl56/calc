@@ -17,4 +17,16 @@ class TestMathExpression < Minitest::Test
   def test_complex_calculation
     assert_equal 14, MathExpression.calculate("4 PLUS 7 MINUS 1 PLUS 4")
   end
+
+  def test_complex_expression
+    assert_equal 10, MathExpression.calculate("2 PLUS 5 MINUS 1 PLUS 4")
+  end
+
+  def test_another_complex_expression
+    assert_equal 5, MathExpression.calculate("2 TIMES 4 MINUS 3")
+  end
+
+  def test_more_complex_expression
+    assert_equal 10, MathExpression.calculate("10 DIVIDE 2 PLUS 6 MINUS 1")
+  end
 end
