@@ -1,8 +1,8 @@
-class ExpressionFormatter
+class DefaultExpressionFormatter
 
-  def initialize(expression, result)
+  def initialize(expression, answer)
     @expression = expression
-    @result = result
+    @answer = answer
   end
 
   def self.default_format(expression, answer)

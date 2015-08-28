@@ -6,7 +6,7 @@ require './lib/exec_expression_formatter'
 
 begin
   expression = ARGV[0]
-  result = MathExpression.calculate(expression)
+  result = MathExpression.answer(expression)
   ExecExpressionFormatter.executable_format(result)
 rescue Interrupt # user pressed CTRL+C
   STDERR.puts "\nCalc: exiting due to user request"

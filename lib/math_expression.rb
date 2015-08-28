@@ -14,13 +14,17 @@ class MathExpression
   }.freeze
 
   def self.calculate(expression)
-    answer = new(expression).calculate
-    # formatted_answer = ExpressionFormatter.default_format expression, answer
+    answer = MathExpression.answer(expression)
+    DefaultExpressionFormatter.default_format(expression, answer)
   end
 
   def calculate
     head, *tail = expression.split.collect{ |v| parse(v) }.compact
     tail.each_slice(2).inject(head) { |number, operation| number.public_send(*operation)}
+  end
+
+  def self.answer(expression)
+    @answer = new(expression).calculate
   end
 
 
