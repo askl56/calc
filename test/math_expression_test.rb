@@ -29,4 +29,8 @@ class TestMathExpression < Minitest::Test
   def test_more_complex_expression
     assert 10, MathExpression.answer("10 DIVIDE 2 PLUS 6 MINUS 1")
   end
+
+  def test_even_more_complex_expression
+    assert 4123, MathExpression.answer("1200 DIVIDE 10 PLUS 31 MINUS 18 TIMES 31")
+  end
 end
