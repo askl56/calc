@@ -3,9 +3,14 @@
 require './lib/math_expression'
 require './lib/exec_expression_formatter'
 
-expression = ARGV[0]
 
-result = MathExpression.calculate(expression)
-ExecExpressionFormatter.executable_format(result)
+begin
+  expression = ARGV[0]
+  result = MathExpression.calculate(expression)
+  ExecExpressionFormatter.executable_format(result)
+rescue Interrupt # user pressed CTRL+C
+  STDERR.puts "\nCalc: exiting due to user request"
+  exit 130
+end
 
 
