@@ -19,7 +19,7 @@ class MathExpression
   end
 
   def calculate
-    head, *tail = expression.split.collect{ |v| parse(v) }.compact
+    head, *tail = expression.split.collect(&:parse).compact
     tail.each_slice(2).inject(head) { |number, operation| number.public_send(*operation)}
   end
 
